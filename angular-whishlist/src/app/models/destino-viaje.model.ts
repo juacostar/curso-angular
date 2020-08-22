@@ -1,7 +1,8 @@
 export class DestinoViaje{
   private selected: boolean;
-  public servicios: String[];
-  constructor(public nombre:String, public u:String){
+  public servicios: string[];
+  public id: number;
+  constructor(public nombre: string, public u: string, public votes: number = 0){
     this.servicios = ['pileta', 'desayuno'];
   }
 
@@ -11,6 +12,14 @@ export class DestinoViaje{
 
   setSelected(s: boolean): void{
     this.selected = s;
+  }
+
+  voteUp() {
+    this.votes++;
+  }
+
+  voteDown() {
+    this.votes--;
   }
 
 }
